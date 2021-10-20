@@ -8,3 +8,4 @@
 
 ### Рабочие записи: </br>
 Справка по containerd: https://habr.com/ru/post/568274/ </br>
+Установка: https://habr.com/ru/post/542042/ </br>
