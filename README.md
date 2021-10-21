@@ -7,5 +7,6 @@
 
 
 ### Рабочие записи: </br>
+Установка containerd https://github.com/containerd/containerd/releases </br>
 Справка по containerd: https://habr.com/ru/post/568274/ </br>
 Установка: https://habr.com/ru/post/542042/ </br>
