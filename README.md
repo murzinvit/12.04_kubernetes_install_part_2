@@ -16,6 +16,7 @@
 -----------------------------------------------------------------------------</br>
 apt update</br>
 apt upgrade -y</br>
+swapoff -a
 apt install sudo gnupg curl apt-transport-https ca-certificates aptitude libseccomp2 -y </br>
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg</br>
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list</br>
