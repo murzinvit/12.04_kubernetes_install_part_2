@@ -7,10 +7,12 @@
 
 
 ### Рабочие записи: </br>
+Установка Docker https://docs.docker.com/engine/install/debian/https://selectel.ru/blog/docker-install-ubuntu/ </br>
+Установка: https://habr.com/ru/post/542042/ </br>
 Установка containerd https://github.com/containerd/containerd/releases </br>
 Справка по containerd: https://habr.com/ru/post/568274/ </br>
-Установка: https://habr.com/ru/post/542042/ </br>
-Установка Docker https://selectel.ru/blog/docker-install-ubuntu/ </br>
+
+
 -----------------------------------------------------------------------------</br>
 apt update</br>
 apt upgrade -y</br>
