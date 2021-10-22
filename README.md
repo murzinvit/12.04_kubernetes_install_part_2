@@ -12,9 +12,9 @@
 Установка: https://habr.com/ru/post/542042/ </br>
 
 -----------------------------------------------------------------------------</br>
-apt-get update</br>
-apt-get upgrade -y</br>
-apt-get install -y sudo gnupg curl apt-transport-https ca-certificates aptitude libseccomp2</br>
+apt update</br>
+apt upgrade -y</br>
+apt install sudo gnupg curl apt-transport-https ca-certificates aptitude libseccomp2 -y </br>
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg</br>
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list</br>
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -</br>
