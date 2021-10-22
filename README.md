@@ -9,7 +9,7 @@
 ### Рабочие записи: </br>
 Установка Docker https://docs.docker.com/engine/install/debian/https://selectel.ru/blog/docker-install-ubuntu/ </br>
 Установка kubectl https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/ </br>
-Установка: https://habr.com/ru/post/542042/ </br>
+Установка Kubernetest: https://habr.com/ru/post/462473// </br>
 Установка containerd https://github.com/containerd/containerd/releases </br>
 Справка по containerd: https://habr.com/ru/post/568274/ </br>
 
