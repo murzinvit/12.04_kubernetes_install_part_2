@@ -7,8 +7,8 @@
 
 
 ### Рабочие записи: </br>
-Установка Docker https://docs.docker.com/engine/install/debian/https://selectel.ru/blog/docker-install-ubuntu/ </br>
-Установка Kubernetes: https://habr.com/ru/post/462473// </br>
+Установка Docker https://docs.docker.com/engine/install/debian/ </br>
+Установка Kubernetes: https://habr.com/ru/post/462473/ </br>
 Установка containerd https://github.com/containerd/containerd/releases </br>
 Справка по containerd: https://habr.com/ru/post/568274/ </br>
 
