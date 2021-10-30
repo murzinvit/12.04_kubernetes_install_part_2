@@ -5,6 +5,8 @@
 - в качестве CRI — containerd; </br>
 - запуск etcd производить на мастере.</br>
 
+Установить Centos 7 на ьастер и воркер </br>
+Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==1.9.2` </br>
 
 ### Рабочие записи: </br>
 Установка Docker https://docs.docker.com/engine/install/debian/ </br>
