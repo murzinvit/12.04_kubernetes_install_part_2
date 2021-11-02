@@ -40,23 +40,5 @@ pip install -r requirements.txt </br>
 cd ~ </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 
------------------------------------------------------------------------------</br>
-apt update</br>
-apt upgrade -y</br>
-swapoff -a </br>
-apt install sudo gnupg curl apt-transport-https ca-certificates aptitude libseccomp2 -y </br>
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg</br>
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list</br>
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -</br>
+-------------------------------------------------------------------------</br>
 
-wget https://github.com/containerd/containerd/releases/download/v1.5.7/containerd-1.5.7-linux-amd64.tar.gz</br>
-tar -xzf containerd-1.5.7-linux-amd64.tar.gz</br>
-chmod -R 777 /opt/bin</br>
-modprobe overlay</br>
-
-echo "[Service]</br>
-Environment="KUBELET_EXTRA_ARGS=--container-runtime=remote --runtime-request-timeout=15m --container-runtime-endpoint=unix:///run/containerd/containerd.sock"" ></br>
-/etc/systemd/system/kubelet.service.d/0-containerd.conf</br>
-
-
-apt-get install containerd -y</br>
