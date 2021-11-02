@@ -49,5 +49,6 @@ Press enter for each line  </br>
 --------------------------------------------------------------------------
 Установка docker на Centos:  </br>
 https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
 sudo dnf install docker-ce --nobest --allowerasing  </br>
 
