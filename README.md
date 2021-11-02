@@ -4,9 +4,8 @@
 - подготовка работы кластера из 5 нод: 1 мастер и 4 рабочие ноды; </br>
 - в качестве CRI — containerd; </br>
 - запуск etcd производить на мастере.</br>
+![screen](https://github.com/murzinvit/screen/blob/0bf2d23f165656e9e580234a0a617b470d17130f/Kuber_install_cluster_kubespray5.jpg) </br>
 
-Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
-Установить python-netaddr:`yum install python-netaddr` </br>
 
 ### Рабочие записи: </br>
 Статьи по установке: </br>
@@ -52,3 +51,7 @@ sudo dnf install docker-ce --nobest --allowerasing  </br>
 
 -------------------------------------------------------------------------- </br>
 ansible-playbook -u root -i /root/kubespray/inventory/dev/inventory.ini cluster.yml -b --diff </br>
+
+--------------------------------------
+Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
+Установить python-netaddr:`yum install python-netaddr` </br>
