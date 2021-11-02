@@ -9,6 +9,9 @@
 Установить python-netaddr:`yum install python-netaddr` </br>
 
 ### Рабочие записи: </br>
+Статьи по установке: </br>
+https://rebrainme.com/blog/kubernetes/sozdanie-klastera-kubernetes-na-vps-s-pomoshhyu-kubespray/ </br>
+https://serveradmin.ru/kubernetes-ustanovka/ </br>
 
 #### Installation k8s on CentOS 8.4
 ------------------------------
