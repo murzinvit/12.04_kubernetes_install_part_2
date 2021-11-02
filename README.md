@@ -41,4 +41,7 @@ cd ~ </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 
 -------------------------------------------------------------------------</br>
-
+1. ssh-keygen -t rsa </br>
+Press enter for each line  </br>
+2. cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
+3. chmod og-wx ~/.ssh/authorized_keys  </br>
