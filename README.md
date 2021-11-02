@@ -17,29 +17,29 @@
 
 Installation k8s on CentOS 8.4
 ------------------------------
-yum install epel-release -y
-yum install wget -y
-yum install curl -y
-yum install git -y 
-yum install python2 -y
-yum install python3 -y
-yum install sshpass -y
------------------------------
-curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-python3 get-pip.py
-pip install --ignore-installed requests==2.23.0
+yum update -y </br>
+yum install epel-release -y </br>
+yum install wget -y </br>
+yum install curl -y </br>
+yum install git -y </br>
+yum install python2 -y </br>
+yum install python3 -y </br>
+yum install sshpass -y </br>
+----------------------------- </br>
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" </br>
+python3 get-pip.py </br>
+pip install --ignore-installed requests==2.23.0 </br>
 
-----------------------------
-cd ~
-git clone https://github.com/kubernetes-sigs/kubespray
-cd ~/kubespray
-pip install -r requirements.txt
+---------------------------- </br>
+cd ~ </br>
+git clone https://github.com/kubernetes-sigs/kubespray </br>
+cd ~/kubespray </br>
+pip install -r requirements.txt </br>
 
--------------------------
-cd ~
-cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev
+------------------------- </br>
+cd ~ </br>
+cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 
--------------------------
 -----------------------------------------------------------------------------</br>
 apt update</br>
 apt upgrade -y</br>
