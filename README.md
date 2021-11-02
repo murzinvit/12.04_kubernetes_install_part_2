@@ -5,17 +5,12 @@
 - в качестве CRI — containerd; </br>
 - запуск etcd производить на мастере.</br>
 
-Установить Centos 7 на ьастер и воркер </br>
 Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
 Установить python-netaddr:`yum install python-netaddr` </br>
 
 ### Рабочие записи: </br>
-Установка Docker https://docs.docker.com/engine/install/debian/ </br>
-Установка Kubernetes: https://habr.com/ru/post/462473/ </br>
-Установка containerd https://github.com/containerd/containerd/releases </br>
-Справка по containerd: https://habr.com/ru/post/568274/ </br>
 
-Installation k8s on CentOS 8.4
+#### Installation k8s on CentOS 8.4
 ------------------------------
 yum update -y </br>
 yum install epel-release -y </br>
@@ -46,9 +41,11 @@ Press enter for each line  </br>
 2. cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
 3. chmod og-wx ~/.ssh/authorized_keys  </br>
 
---------------------------------------------------------------------------
+--------------------------------------------------------------------------</br>
 Установка docker на Centos:  </br>
 https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
 sudo dnf install docker-ce --nobest --allowerasing  </br>
 
+-------------------------------------------------------------------------- </br>
+ansible-playbook -u root -i /root/kubespray/inventory/dev/inventory.ini cluster.yml -b --diff </br>
