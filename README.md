@@ -17,7 +17,10 @@ https://serveradmin.ru/kubernetes-ustanovka/ </br>
 
 #### Installation k8s on CentOS 8.4  </br>
 Установка производилась с master ноды </br>
-На все ноды требуется установить пррограммы: </br>            
+На все ноды требуется установить пррограммы: </br> 
+systemctl disable firewalld  </br>
+swapoff -a  </br>
+vi /etc/selinux/config (отключить selinux - disabled)  </br>
 yum update -y </br>
 yum install epel-release -y </br>
 yum install wget -y </br>
@@ -44,7 +47,7 @@ pip install -r requirements.txt </br>
 ----------------------------------------- </br>
 Копируем и изменяем файл инвентаря: </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
-далее конфигурируем inventory.ini до требуемого состояния</br>
+Далее конфигурируем inventory.ini до требуемого состояния, также изменить </br>
 Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
 -------------------------------------------------------------------------</br>
 Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost </br>
