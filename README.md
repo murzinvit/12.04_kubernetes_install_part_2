@@ -42,7 +42,7 @@ cd ~/kubespray </br>
 pip install -r requirements.txt </br>
 
 ----------------------------------------- </br>
-Копирует и изменяем файл инвентаря: </br>
+Копируем и изменяем файл инвентаря: </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 далее конфигурируем inventory.ini до требуемого состояния</br>
 Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
