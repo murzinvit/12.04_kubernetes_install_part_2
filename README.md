@@ -16,8 +16,8 @@ https://rebrainme.com/blog/kubernetes/sozdanie-klastera-kubernetes-na-vps-s-pomo
 https://serveradmin.ru/kubernetes-ustanovka/ </br>
 
 #### Installation k8s on CentOS 8.4  </br>
-#### Установка производилась с master ноды </br>
------------------------------------------- </br>           
+Установка производилась с master ноды </br>
+На все ноды требуется установить пррограммы: </br>            
 yum update -y </br>
 yum install epel-release -y </br>
 yum install wget -y </br>
@@ -26,12 +26,16 @@ yum install git -y </br>
 yum install python2 -y </br>
 yum install python3 -y </br>
 yum install sshpass -y </br>
------------------------------------------ </br>
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" </br>
 python3 get-pip.py </br>
 pip install --ignore-installed requests==2.23.0 </br>
-
+Установка docker:  </br>
+https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
+sudo dnf install docker-ce --nobest --allowerasing  </br>
+docker run hello-world </br>
 ----------------------------------------- </br>
+Дальнейшие действия выполнять только на мастер ноде </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
 cd ~/kubespray </br>
@@ -49,12 +53,6 @@ ssh-copy-id -i id_rsa.pub root@remote_ip </br>
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
 chmod og-wx ~/.ssh/authorized_keys  </br>
 
---------------------------------------------------------------------------</br>
-Установка docker на Centos:  </br>
-https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
-dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
-sudo dnf install docker-ce --nobest --allowerasing  </br>
-docker run hello-world </br>
 -------------------------------------------------------------------------- </br>
 Установка кластера: </br>
 ansible-playbook -u root -i /root/kubespray/inventory/dev/inventory.ini cluster.yml -b --diff </br>
