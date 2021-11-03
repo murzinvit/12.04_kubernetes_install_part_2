@@ -18,9 +18,6 @@ https://serveradmin.ru/kubernetes-ustanovka/ </br>
 #### Installation k8s on CentOS 8.4  </br>
 Установка производилась с master ноды </br>
 На все ноды требуется установить пррограммы: </br> 
-systemctl disable firewalld  </br>
-swapoff -a  </br>
-vi /etc/selinux/config (отключить selinux - disabled)  </br>
 yum update -y </br>
 yum install epel-release -y </br>
 yum install wget -y </br>
@@ -37,7 +34,14 @@ https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
 sudo dnf install docker-ce --nobest --allowerasing  </br>
 docker run hello-world </br>
------------------------------------------ </br>
+
+-----------------------------------------------------
+Отключить: </br>
+systemctl disable firewalld  </br>
+swapoff -a  </br>
+vi /etc/selinux/config (отключить selinux - disabled)  </br>
+
+----------------------------------------------------- </br>
 Дальнейшие действия выполнять только на мастер ноде </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
