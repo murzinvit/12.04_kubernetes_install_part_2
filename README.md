@@ -42,9 +42,10 @@ cd ~/kubespray </br>
 pip install -r requirements.txt </br>
 
 ----------------------------------------- </br>
+Копирует и изменяем файл инвентаря: </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
-далее конфигурация inventory.ini </br>
-
+далее конфигурируем inventory.ini до требуемого состояния</br>
+Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
 -------------------------------------------------------------------------</br>
 Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost </br>
 cd ~/.ssh </br>
@@ -55,7 +56,8 @@ chmod og-wx ~/.ssh/authorized_keys  </br>
 
 -------------------------------------------------------------------------- </br>
 Установка кластера: </br>
-ansible-playbook -u root -i /root/kubespray/inventory/dev/inventory.ini cluster.yml -b --diff </br>
+cd ~/kubespray </br>
+ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff </br>
 
 -------------------------------------------------------------------------- </br>
 Возможно поребуется при установке: </br>
