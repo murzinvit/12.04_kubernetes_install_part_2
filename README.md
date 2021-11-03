@@ -11,13 +11,13 @@
 
 
 ### Рабочие записи: </br>
-Статьи по установке: </br>
+#### Статьи по установке: </br>
 https://rebrainme.com/blog/kubernetes/sozdanie-klastera-kubernetes-na-vps-s-pomoshhyu-kubespray/ </br>
 https://serveradmin.ru/kubernetes-ustanovka/ </br>
 
 #### Installation k8s on CentOS 8.4  </br>
-Установка производилась с master ноды </br>
-------------------------------
+#### Установка производилась с master ноды </br>
+------------------------------------------ </br>           
 yum update -y </br>
 yum install epel-release -y </br>
 yum install wget -y </br>
@@ -26,18 +26,18 @@ yum install git -y </br>
 yum install python2 -y </br>
 yum install python3 -y </br>
 yum install sshpass -y </br>
------------------------------ </br>
+----------------------------------------- </br>
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" </br>
 python3 get-pip.py </br>
 pip install --ignore-installed requests==2.23.0 </br>
 
----------------------------- </br>
+----------------------------------------- </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
 cd ~/kubespray </br>
 pip install -r requirements.txt </br>
 
-------------------------- </br>
+----------------------------------------- </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 далее конфигурация inventory.ini </br>
 
