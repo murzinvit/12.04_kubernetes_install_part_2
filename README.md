@@ -80,6 +80,7 @@ ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff 
 Ести кватраты вместо русских букв: </br>
 setfont UniCyr_8x16 </br>
 Меняем в /etc/vconsole.conf FONT="UniCyr_8x16" </br>
+
 ----------------------------------------------------------------------------------------------------
-kubectl get nodes - если некоторые узлы помечены как none: </br>
+kubectl get nodes - еслив выводе команды некоторые узлы помечены как none: </br>
 kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker1kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker1 </br>
