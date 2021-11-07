@@ -36,10 +36,11 @@ dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce
 sudo dnf install docker-ce --nobest --allowerasing -y </br>
 
 -----------------------------------------------------
-Отключить: </br>
-systemctl disable firewalld  </br>
-swapoff -a  </br>
-vi /etc/selinux/config (отключить selinux - disabled)  </br>
+Отключить firewall, swap, selinux : </br>
+systemctl stop firewalld && systemctl disable firewalld && systemctl mask firewalld </br>
+swapoff -a , ещё требуется закоментировать строку - swap, в /etc/fstab </br>
+vi /etc/selinux/config , изменить SELINUX=permissive на SELINUX=disabled  </br>
+Выполнить - reboot </br>
 
 ----------------------------------------------------- </br>
 Дальнейшие действия выполнять только на мастер ноде </br>
