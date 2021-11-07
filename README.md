@@ -11,12 +11,14 @@
 
 
 ### Рабочие записи: </br>
-#### Статьи по установке: </br>
+#### Статьи по установке k8s: </br>
 https://rebrainme.com/blog/kubernetes/sozdanie-klastera-kubernetes-na-vps-s-pomoshhyu-kubespray/ </br>
 https://serveradmin.ru/kubernetes-ustanovka/ </br>
+Статья по установке docker на Centos 8: </br>
+https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
 
-#### Installation k8s on CentOS 8.4  </br>
-Установка производилась с master ноды </br>
+#### Installation k8s on CentOS 8.4:  </br>
+Установку производить с master ноды. </br>
 На все ноды требуется установить пррограммы: </br> 
 yum update -y </br>
 yum install epel-release -y </br>
@@ -29,11 +31,9 @@ yum install sshpass -y </br>
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" </br>
 python3 get-pip.py </br>
 pip install --ignore-installed requests==2.23.0 </br>
-Установка docker:  </br>
-https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
+Установка docker на Centos:  </br>
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
-sudo dnf install docker-ce --nobest --allowerasing  </br>
-docker run hello-world </br>
+sudo dnf install docker-ce --nobest --allowerasing -y </br>
 
 -----------------------------------------------------
 Отключить: </br>
