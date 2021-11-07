@@ -16,6 +16,8 @@ https://rebrainme.com/blog/kubernetes/sozdanie-klastera-kubernetes-na-vps-s-pomo
 https://serveradmin.ru/kubernetes-ustanovka/ </br>
 Статья по установке docker на Centos 8: </br>
 https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
+Установка k8s + calico: </br>
+https://www.kryukov.biz/kubernetes/ustanovka-klastera-kubernetes/ </br>
 
 #### Installation k8s on CentOS 8.4:  </br>
 Установку производить с master ноды. </br>
@@ -35,26 +37,27 @@ pip install --ignore-installed requests==2.23.0 </br>
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo  </br>
 sudo dnf install docker-ce --nobest --allowerasing -y </br>
 
------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 Отключить firewall, swap, selinux : </br>
 systemctl stop firewalld && systemctl disable firewalld && systemctl mask firewalld </br>
 swapoff -a , ещё требуется закоментировать строку - swap, в /etc/fstab </br>
 vi /etc/selinux/config , изменить SELINUX=permissive на SELINUX=disabled  </br>
 Выполнить - reboot </br>
 
------------------------------------------------------ </br>
+-------------------------------------------------------------------------------------------------- 
 Дальнейшие действия выполнять только на мастер ноде </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
 cd ~/kubespray </br>
 pip install -r requirements.txt </br>
 
------------------------------------------ </br>
+---------------------------------------------------------------------------------------------------
 Копируем и изменяем файл инвентаря: </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 Далее конфигурируем inventory.ini до требуемого состояния, также изменить </br>
 Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
--------------------------------------------------------------------------</br>
+
+---------------------------------------------------------------------------------------------------
 Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost - master c которого все делаем </br>
 ssh-keygen -t rsa </br>
 cd ~/.ssh </br>
@@ -65,12 +68,15 @@ ssh-copy-id -i id_rsa.pub root@k8s-ingress1 </br>
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
 chmod og-wx ~/.ssh/authorized_keys  </br>
 
--------------------------------------------------------------------------- </br>
+---------------------------------------------------------------------------------------------------
 Установка кластера: </br>
 cd ~/kubespray </br>
 ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff </br>
 
--------------------------------------------------------------------------- </br>
+---------------------------------------------------------------------------------------------------
 Возможно поребуется при установке: </br>
 Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
 Установить python-netaddr:`yum install python-netaddr` </br>
+Ести кватраты вместо русских букв: </br>
+setfont UniCyr_8x16 </br>
+Меняем в /etc/vconsole.conf FONT="UniCyr_8x16" </br>
