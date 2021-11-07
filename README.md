@@ -55,10 +55,13 @@ cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 Далее конфигурируем inventory.ini до требуемого состояния, также изменить </br>
 Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
 -------------------------------------------------------------------------</br>
-Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost </br>
-cd ~/.ssh </br>
+Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost - master c которого все делаем </br>
 ssh-keygen -t rsa </br>
-ssh-copy-id -i id_rsa.pub root@remote_ip </br>
+cd ~/.ssh </br>
+ssh-copy-id -i id_rsa.pub root@k8s-worker1 </br>
+ssh-copy-id -i id_rsa.pub root@k8s-ingress1 </br>
+и так далее на все ноды  </br>
+Для мастер ноды: </br>
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
 chmod og-wx ~/.ssh/authorized_keys  </br>
 
