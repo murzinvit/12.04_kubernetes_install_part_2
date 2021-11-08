@@ -82,5 +82,6 @@ setfont UniCyr_8x16 </br>
 Меняем в /etc/vconsole.conf FONT="UniCyr_8x16" </br>
 
 ----------------------------------------------------------------------------------------------------
-kubectl get nodes - еслив выводе команды некоторые узлы помечены как none: </br>
-kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker1kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker1 </br>
+kubectl get nodes - если в выводе команды,в поле ROLES некоторые узлы помечены - none: </br>
+kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker </br>
+kubectl label node k8s-ingress1 node-role.kubernetes.io/ingress=ingress </br>
