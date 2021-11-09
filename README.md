@@ -18,6 +18,8 @@ https://serveradmin.ru/kubernetes-ustanovka/ </br>
 https://phoenixnap.com/kb/how-to-install-docker-on-centos-8  </br>
 Установка k8s + calico: </br>
 https://www.kryukov.biz/kubernetes/ustanovka-klastera-kubernetes/ </br>
+Статья по настройке ingress: </br>
+https://serveradmin.ru/nastroyka-kubernetes/#_Ingress </br>
 
 #### Installation k8s on CentOS 8.4:  </br>
 Установку производить с master ноды. </br>
@@ -80,6 +82,9 @@ ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff 
 Ести кватраты вместо русских букв: </br>
 setfont UniCyr_8x16 </br>
 Меняем в /etc/vconsole.conf FONT="UniCyr_8x16" </br>
+Автодополнение в консоли для k8s: </br>
+kubectl completion bash >> ~/.bashrc </br>
+yum install bash-completion </br>
 
 ----------------------------------------------------------------------------------------------------
 kubectl get nodes - если в выводе команды,в поле ROLES некоторые узлы помечены - none: </br>
