@@ -21,7 +21,7 @@ https://www.kryukov.biz/kubernetes/ustanovka-klastera-kubernetes/ </br>
 Статья по настройке ingress: </br>
 https://serveradmin.ru/nastroyka-kubernetes/#_Ingress </br>
 
-#### Installation k8s on CentOS 8.4:  </br>
+### Installation k8s on CentOS 8.4:  </br>
 Установку производить с master ноды. </br>
 На все ноды требуется установить пррограммы: </br> 
 yum update -y </br>
@@ -42,7 +42,7 @@ dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce
 sudo dnf install docker-ce --nobest --allowerasing -y </br>
 
 -------------------------------------------------------------------------------------------------
-#### Отключить firewall, swap, selinux: </br>
+### Отключить firewall, swap, selinux: </br>
 systemctl stop firewalld && systemctl disable firewalld && systemctl mask firewalld </br>
 swapoff -a  </br>
 vi /etc/fstab - требуется закоментировать строку - swap </br>
@@ -51,7 +51,7 @@ vi /etc/selinux/config - изменить SELINUX=permissive на SELINUX=disabl
 reboot </br>
 
 -------------------------------------------------------------------------------------------------- 
-Дальнейшие действия выполнять только на мастер ноде </br>
+### Дальнейшие действия выполнять только на мастер ноде </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
 cd ~/kubespray </br>
