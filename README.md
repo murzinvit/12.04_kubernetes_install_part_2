@@ -32,6 +32,8 @@ yum install git -y </br>
 yum install python2 -y </br>
 yum install python3 -y </br>
 yum install sshpass -y </br>
+yum install mc -y </br>
+yum install ansible -y </br>
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" </br>
 python3 get-pip.py </br>
 pip install --ignore-installed requests==2.23.0 </br>
