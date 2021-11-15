@@ -51,36 +51,35 @@ vi /etc/selinux/config - изменить SELINUX=permissive на SELINUX=disabl
 reboot </br>
 
 -------------------------------------------------------------------------------------------------- 
-### Дальнейшие действия выполнять только на мастер ноде </br>
+### Дальнейшие действия выполнять только на мастер ноде: </br>
 cd ~ </br>
 git clone https://github.com/kubernetes-sigs/kubespray </br>
 cd ~/kubespray </br>
 pip install -r requirements.txt </br>
 
 ---------------------------------------------------------------------------------------------------
-Копируем и изменяем файл инвентаря: </br>
+### Копируем и изменяем файл инвентаря: </br>
 cp -R ~/kubespray/inventory/sample ~/kubespray/inventory/dev </br>
 Далее конфигурируем inventory.ini до требуемого состояния </br>
 Мой файл [inventory.ini](https://github.com/murzinvit/12.04_kubernetes_install_part_2/blob/034cf987c022e050d9f093e0a4bf9848b7cfbf25/inventory/dev/inventory.ini) </br>
 
 ---------------------------------------------------------------------------------------------------
-Сгенерить ssh ключи и разнести на все ноды в том числе и на localhost - master c которого все делаем </br>
+### Сгенерить ssh ключи и скопировать на ноды в том числе и localhost - master1, c которого все делаем: </br>
 ssh-keygen -t rsa </br>
 cd ~/.ssh </br>
 ssh-copy-id -i id_rsa.pub root@k8s-worker1 </br>
 ssh-copy-id -i id_rsa.pub root@k8s-ingress1 </br>
-и так далее на все ноды  </br>
 Для мастер ноды: </br>
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys </br>
 chmod og-wx ~/.ssh/authorized_keys  </br>
 
 ---------------------------------------------------------------------------------------------------
-Установка кластера: </br>
+### Установка кластера: </br>
 cd ~/kubespray </br>
 ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff </br>
 
 ---------------------------------------------------------------------------------------------------
-Возможно поребуется при установке: </br>
+### Возможно поребуется при установке: </br>
 Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
 Установить python-netaddr:`yum install python-netaddr` </br>
 Ести кватраты вместо русских букв: </br>
@@ -91,6 +90,7 @@ kubectl completion bash >> ~/.bashrc </br>
 yum install bash-completion </br>
 
 ----------------------------------------------------------------------------------------------------
+### Назначить роль ноде: </br>
 kubectl get nodes - если в выводе команды,в поле ROLES некоторые узлы помечены - none: </br>
 kubectl label node k8s-worker1 node-role.kubernetes.io/worker=worker </br>
 kubectl label node k8s-ingress1 node-role.kubernetes.io/ingress=ingress </br>
