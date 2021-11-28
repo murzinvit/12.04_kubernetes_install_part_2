@@ -82,6 +82,7 @@ ansible-playbook -u root -i ./inventory/dev/inventory.ini cluster.yml -b --diff 
 ### Возможно поребуется при установке: </br>
 Установить ansible 3.4 на мастер ноду: `pip install --upgrade ansible==3` </br>
 Установить python-netaddr:`yum install python-netaddr` </br>
+Также `pip3 list | grep -e ansible -e Jinja2` </br>
 Ести кватраты вместо русских букв: </br>
 setfont UniCyr_8x16 </br>
 Меняем в /etc/vconsole.conf FONT="UniCyr_8x16" </br>
